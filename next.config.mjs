@@ -4,7 +4,7 @@ const nextConfig = {
     return [
       {
         source: "/api/:path*",
-        destination: "https://audiophile-back-20jv.onrender.com/:path*", // Proxy to backend server
+        destination: `${process.env.BACKEND_URL}/:path*`, // Proxy to backend server
       },
     ];
   },
