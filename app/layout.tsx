@@ -8,20 +8,19 @@ import Categories from "./layout/Categories";
 import "./globals.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { QueryClientProvider, QueryClient } from "react-query";
-import { ReactQueryDevtools } from "react-query/devtools";
 import { userDataContext } from "./context/userContext";
 import { useState } from "react";
 import firebase from "firebase/compat/app";
 import { Toaster } from "@/components/ui/toaster";
-import { Container } from "react-bootstrap";
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBirBo5uwsMxsiobcpHIsrqDNYoyrPWGcM",
-  authDomain: "e-commerce-74d60.firebaseapp.com",
-  projectId: "e-commerce-74d60",
-  storageBucket: "e-commerce-74d60.appspot.com",
-  messagingSenderId: "415702834141",
-  appId: "1:415702834141:web:09a520be4766b6651eb434",
-  measurementId: "G-HLXPWT5DKC",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
 firebase.initializeApp(firebaseConfig);
